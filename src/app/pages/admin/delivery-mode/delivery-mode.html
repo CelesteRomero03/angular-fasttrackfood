@@ -1,0 +1,122 @@
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h2>🚚 Modos de Entrega</h2>
+
+</div>
+
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+
+        <table class="table table-hover">
+
+            <thead>
+
+                <tr>
+                    <th>Modo</th>
+                    <th>Estado</th>
+                    <th>Acción</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+                @for(modo of modos; track modo.id){
+
+                <tr>
+
+
+                    <td>
+
+                        @if(modo.mode === 'delivery'){
+
+                            🚚 Envío a domicilio
+
+                        }
+                        @else if(modo.mode === 'take_away'){
+
+                            🛍️ Take Away
+
+                        }
+                        @else{
+
+                            🍽️ Consumo en local
+
+                        }
+
+                    </td>
+
+
+
+                    <td>
+
+                        @if(modo.isActive){
+
+                            <span class="badge bg-success">
+                                Activo
+                            </span>
+
+                        }
+                        @else{
+
+                            <span class="badge bg-danger">
+                                Inactivo
+                            </span>
+
+                        }
+
+                    </td>
+
+
+
+                    <td>
+
+
+                        <button 
+                        class="btn btn-sm"
+                        [class.btn-danger]="modo.isActive"
+                        [class.btn-success]="!modo.isActive"
+                        (click)="cambiarEstado(modo)">
+
+
+                            @if(modo.isActive){
+
+                                Desactivar
+
+                            }
+                            @else{
+
+                                Activar
+
+                            }
+
+
+                        </button>
+
+
+                    </td>
+
+
+                </tr>
+
+                }
+
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+
+</div>
+</div>
+

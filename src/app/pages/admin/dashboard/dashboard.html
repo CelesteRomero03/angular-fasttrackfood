@@ -1,0 +1,110 @@
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <h2>🍔Fast Track Food</h2>
+
+        <ul>
+
+            <li>
+                <a routerLink="/admin/dashboard" routerLinkActive="active">
+                    📊 Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+                <a routerLink="/admin/products" routerLinkActive="active">
+                    📦 Productos
+                </a>
+
+            </li>
+            <li>
+                <a routerLink="/admin/categorias" routerLinkActive="active">
+                    📂 Categorías
+                </a>
+
+            </li>
+            <li>
+                <a routerLink="/admin/pedidos" routerLinkActive="active">
+                    🛒 Pedidos
+                </a>
+
+            </li>
+
+             <li>
+                <a routerLink="/admin/delivery-modes" routerLinkActive="active">
+                   🏍️ Delivery
+                </a>
+
+            </li>
+
+            <li>
+                <a routerLink="/admin/usuarios" routerLinkActive="active">
+                     👥Usuarios
+                </a>
+
+            </li>
+
+            <li>🚪 Salir</li>
+
+        </ul>
+
+    </aside>
+
+    <main class="content">
+
+        <h2>
+
+            Bienvenido {{ usuario.name }}
+
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>📦 Productos</h3>
+
+                <p>Total registrados</p>
+
+                <h1>{{ totalProductos }}</h1>
+
+            </div>
+
+            <div class="card">
+
+                <h3>📂 Categorías</h3>
+
+                <p>Total registrados</p>
+
+                <h1>{{ totalCategorias }}</h1>
+
+            </div>
+
+            <div class="card">
+
+                <h3>🛒 Pedidos</h3>
+
+                <p>Total registrados</p>
+
+                <h1>{{ totalPedidos }}</h1>
+
+            </div>
+
+            <div class="card">
+
+                <h3>👥 Usuarios</h3>
+
+                <p>Total registrados</p>
+
+                <h1>{{ totalUsuarios }}</h1>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>

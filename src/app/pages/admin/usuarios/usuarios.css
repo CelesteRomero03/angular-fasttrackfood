@@ -1,0 +1,124 @@
+/* Contenedor principal */
+h2 {
+  font-weight: 600;
+  color: #333;
+}
+
+
+
+/* Tabla */
+.table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+
+.table thead {
+  background-color: #212529;
+  color: white;
+}
+
+
+.table th {
+  padding: 14px;
+  font-weight: 500;
+}
+
+
+.table td {
+  padding: 12px;
+  vertical-align: middle;
+}
+
+
+/* Hover filas */
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+
+/* Badges */
+.badge {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  border-radius: 20px;
+}
+
+
+/* Botones acciones */
+td .btn {
+  border-radius: 8px;
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  margin-bottom: 4px;
+}
+
+
+.btn-warning {
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+
+/* Modal */
+.modal-content {
+
+  border-radius: 15px;
+  border: none;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+
+}
+
+
+.modal-header {
+
+  background-color: #ffc107;
+  border-radius: 15px 15px 0 0;
+
+}
+
+
+.modal-title {
+
+  font-weight: 600;
+
+}
+
+
+.modal-body {
+
+  padding: 25px;
+
+}
+
+
+/* Inputs */
+
+.form-control,
+.form-select {
+
+  border-radius: 10px;
+  padding: 10px;
+
+}
+
+
+.form-control:focus,
+.form-select:focus {
+
+  border-color: #ffc107;
+  box-shadow: 0 0 0 .2rem rgba(255,193,7,.25);
+
+}
+
+
+/* Footer modal */
+
+.modal-footer {
+
+  padding: 15px 25px;
+
+}

@@ -1,0 +1,47 @@
+.admin-navbar{
+
+    background:#1b1b1b;
+
+    border-bottom:3px solid #d8b35c;
+
+}
+
+.admin-navbar .navbar-brand{
+
+    color:#d8b35c;
+
+    font-size:24px;
+
+}
+
+.admin-navbar .nav-link{
+
+    color:white;
+
+    font-weight:500;
+
+    margin:0 8px;
+
+    transition:.3s;
+
+}
+
+.admin-navbar .nav-link:hover{
+
+    color:#d8b35c;
+
+}
+
+.admin-navbar .nav-link.active{
+
+    color:#d8b35c;
+
+    border-bottom:2px solid #d8b35c;
+
+}
+
+.admin-navbar .btn-outline-warning{
+
+    border-radius:20px;
+
+}

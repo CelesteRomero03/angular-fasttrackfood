@@ -1,0 +1,9 @@
+.public-container {
+  background-image: url('/images/image5.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+   padding-top: 20px;
+}

@@ -1,0 +1,17 @@
+.seguimiento-card{
+
+    max-width:600px;
+
+    margin:auto;
+
+    background:#1b1b1b;
+
+    color:white;
+
+    border:1px solid #d8b35c;
+
+    border-radius:20px;
+
+    padding:40px;
+
+}

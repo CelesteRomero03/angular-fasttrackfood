@@ -1,0 +1,218 @@
+<form [formGroup]="pedidoForm" (ngSubmit)="confirmarPedido()">
+
+    @if(paso === 1){
+
+    <div class="checkout-card">
+
+        <div class="step-header">
+
+            <span>Paso 1 de 2</span>
+
+        </div>
+
+        <h2>
+            📋 Tus Datos
+        </h2>
+
+        <label class="form-label">
+            Nombre
+        </label>
+
+        <input type="text" placeholder="Nombre" formControlName="clientName" class="form-control mb-3">
+
+        <label class="form-label">
+            Apellido
+        </label>
+        <input type="text" placeholder="Apellido" formControlName="clientLastName" class="form-control mb-3">
+
+        <label class="form-label">
+            Telefono
+        </label>
+        <input type="text" placeholder="Teléfono" formControlName="clientPhone" class="form-control mb-3">
+
+
+
+        @if(
+        pedidoForm.get('clientEmail')?.invalid &&
+        pedidoForm.get('clientEmail')?.touched
+        ){
+
+        <small class="text-danger">
+            Email inválido
+        </small>
+
+        }
+
+        <label class="form-label">
+            Email
+        </label>
+        <input type="email" placeholder="Email" formControlName="clientEmail" class="form-control mb-4">
+
+
+
+
+
+        <button type="button" class="btn-next" (click)="siguientePaso()">
+
+            Siguiente 🡆
+
+        </button>
+
+    </div>
+
+    }
+
+
+    @if(paso === 2){
+
+    <div class="checkout-card">
+
+        <div class="step-header">
+
+            <button type="button" class="btn-back" (click)="volverPaso()">
+
+                ← Volver
+
+            </button>
+
+            <span>Paso 2 de 2</span>
+
+        </div>
+
+
+        <h2>
+            🚚 Modo de Entrega
+        </h2>
+
+        @for(modo of modosEntrega;track modo.id){
+        <div class="delivery-option">
+
+            <input type="radio" [value]="modo.mode" formControlName="deliveryMode">
+
+
+            @if(modo.mode === 'delivery'){
+            🏠 A domicilio
+            }
+
+            @else if(modo.mode === 'take_away'){
+            🛍️ Take Away
+            }
+
+            @else{
+            🍽️ Consumir en el Local
+            }
+
+
+        </div>
+        }
+
+
+        @if(
+        pedidoForm.get('deliveryMode')?.value === 'delivery'
+        ){
+
+        <label class="form-label">
+            Dirrecion
+        </label>
+        <input type="text" placeholder="Dirección" formControlName="deliveryAddress" class="form-control mt-3">
+
+        }
+
+        <textarea rows="4" placeholder="Observaciones" formControlName="notes" class="form-control mt-3">
+        </textarea>
+
+        <button type="button" class="btn btn-warning w-100" (click)="siguientePaso2()">
+
+            Ver Resumen
+
+        </button>
+
+    </div>
+
+    }
+
+    @if(paso === 3){
+
+    <div class="checkout-card">
+
+        <h2>📋 Confirmar tu Pedido</h2>
+
+        <div class="summary-box">
+
+            <h4>Resumen</h4>
+
+            @for(item of carrito; track item.id){
+
+            <div class="d-flex justify-content-between">
+
+                <span>
+                    {{ item.quantify }}x {{ item.name }}
+                </span>
+
+                <span>
+                    ${{ item.price * item.quantify }}
+                </span>
+
+            </div>
+
+            }
+
+            <hr>
+
+            <div class="d-flex justify-content-between">
+
+                <strong>Total:</strong>
+
+                <strong>
+                    ${{ total }}
+                </strong>
+
+            </div>
+
+        </div>
+
+        <div class="summary-box mt-3">
+
+            <h4>Datos del Cliente</h4>
+
+            <p>
+                {{ pedidoForm.value.clientName }}
+                {{ pedidoForm.value.clientLastName }}
+            </p>
+
+            <p>{{ pedidoForm.value.clientPhone }}</p>
+
+            <p>{{ pedidoForm.value.clientEmail }}</p>
+
+        </div>
+
+        <div class="summary-box mt-3">
+
+            <h4>Entrega</h4>
+
+            <p>{{ pedidoForm.value.deliveryMode }}</p>
+
+            <p>{{ pedidoForm.value.deliveryAddress }}</p>
+
+        </div>
+
+        <div class="d-flex gap-2 mt-4">
+
+            <button class="btn btn-secondary w-50" (click)="volverPaso2()">
+
+                Volver
+
+            </button>
+
+            <button type="submit" class="btn btn-warning w-50" [disabled]="enviando">
+
+                {{ enviando ? 'Enviando...' : 'Confirmar y Pedir' }}
+
+            </button>
+        </div>
+
+    </div>
+
+    }
+
+</form>

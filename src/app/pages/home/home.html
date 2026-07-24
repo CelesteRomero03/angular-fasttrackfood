@@ -1,0 +1,89 @@
+<div class="container mt-5">
+
+    <div class="titulo">
+        <h1>Food Menu</h1>
+        <h2>Special Delicious</h2>
+    </div>
+
+    
+
+
+    <div class="row">
+
+        <div class=" search-box mb-4">
+
+            <input type="text" class="form-control search-input" placeholder="🔍 Buscar producto..." [(ngModel)]="textBusqueda"
+                (input)="filtrarProductos()">
+
+        </div>
+
+       
+
+
+        <div class="categories">
+
+            <button class="category-btn" (click)="filtrarCategoria('Todas')"  >
+
+                Todos
+
+            </button>
+
+            @for(categoria of categorias; track categoria.id){
+                
+                <button class="category-btn" (click)="filtrarCategoria(categoria.name)">
+
+                {{categoria.name}}
+
+            </button>
+
+            }
+
+            
+
+        </div>
+
+
+        @if(productosFiltrados.length === 0){
+
+        <p class="textAdvert mt-4">
+            No se encontraron productos.
+        </p>
+
+        }
+
+        @for (product of productosFiltrados; track product.id) {
+
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
+
+            <div class="food-card">
+
+                <div class="food-image">
+                    <img [src]="product.imageUrl" [alt]="product.name">
+                </div>
+
+                <div class="food-content">
+
+                    <h3>{{ product.name }}</h3>
+
+                    <p>{{ product.description }}</p>
+
+                    <div class="price text-warning fw-bold fs-4">
+                       {{ product.price | currency:'ARS':'symbol':'1.0-0' }}
+                    </div>
+
+                    <button class="btn-order" (click)="addToCart(product)">
+                        Agregar al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        }
+
+    </div>
+
+    
+</div>

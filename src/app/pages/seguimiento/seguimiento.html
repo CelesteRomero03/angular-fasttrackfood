@@ -1,0 +1,58 @@
+<div class="container mt-5">
+
+    <div class="card seguimiento-card">
+
+        <h2 class="text-center mb-4">
+            📦 Seguimiento del Pedido
+        </h2>
+
+        <div class="mb-3">
+
+            <label>Número de pedido</label>
+
+            <input
+                class="form-control"
+                [(ngModel)]="orderNumber"
+                placeholder="Ej: FTF-0008">
+
+        </div>
+
+        <button
+            class="btn btn-warning w-100"
+            (click)="buscarPedido()">
+
+            Buscar
+
+        </button>
+
+        @if(pedido){
+
+        <hr>
+
+        <h4>{{pedido.customerName}}</h4>
+
+        <p>
+
+            Estado:
+
+            <span class="badge bg-warning text-dark">
+
+                {{pedido.status}}
+
+            </span>
+
+        </p>
+
+        <p>
+
+            Total:
+
+            ${{pedido.total}}
+
+        </p>
+
+        }
+
+    </div>
+
+</div>

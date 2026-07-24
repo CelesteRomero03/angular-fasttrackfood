@@ -1,0 +1,54 @@
+<div class="container mt-5">
+
+    <h2 class="cart-title">
+        🛒 Mi Carrito
+    </h2>
+
+    @for(item of carrito; track item.id){
+
+    <div class="cart-item">
+
+        <h4>{{ item.name }}</h4>
+
+        <div class="controls">
+
+            <button (click)="disminuir(item.id)">
+                -
+            </button>
+
+            <span>
+                {{ item.quantify }}
+            </span>
+
+            <button (click)="aumentar(item.id)">
+                +
+            </button>
+
+        </div>
+
+        <h5>
+            ${{ item.price * item.quantify }}
+        </h5>
+
+        <button class="btn-eliminar" (click)="eliminar(item.id)">
+            🗑 Eliminar
+        </button>
+
+    </div>
+
+    }
+
+    <div class="cart-total">
+        <h3>
+            Total: ${{ total }}
+        </h3>
+    </div>
+
+    <button class="btn-checkout" routerLink="/checkout">
+
+        Continuar Compra
+
+    </button>
+
+
+</div>

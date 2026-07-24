@@ -1,0 +1,62 @@
+.custom-navbar{
+    background-color:#111;
+    border-bottom:2px solid #d4a017;
+    padding:12px 0;
+}
+
+.navbar-brand{
+    color:#ffc636;
+    font-size:1.8rem;
+}
+
+.navbar-brand:hover{
+    color:#f3c14d;
+}
+
+.nav-link{
+    color:white;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#ffc107;
+}
+
+.nav-link.active{
+    color:#ffc107;
+    font-weight:bold;
+}
+
+.btn-warning{
+    font-weight:600;
+}
+
+.navbar-toggler{
+    border-color:#ffc107;
+}
+
+.navbar-toggler:focus{
+    box-shadow:none;
+}
+
+.navbar-toggler-icon{
+    filter: invert(1);
+}
+
+
+.btn-warning{
+    border-radius:30px;
+
+    padding:10px 22px;
+
+    transition:.3s;
+}
+.btn-warning:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+
