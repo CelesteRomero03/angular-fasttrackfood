@@ -1,0 +1,36 @@
+.card {
+    border: none;
+    border-radius: 15px;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.badge {
+    font-size: .9rem;
+    padding: .5rem .8rem;
+}
+
+@media (max-width: 768px) {
+
+    h2 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .table {
+        font-size: .9rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .badge {
+        display: inline-block;
+        width: 100%;
+    }
+
+}

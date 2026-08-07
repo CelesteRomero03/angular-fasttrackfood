@@ -1,122 +1,85 @@
-<div class="container mt-4">
+<div class="container py-4">
 
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+        <h2 class="mb-3 mb-md-0">🚚 Modos de Entrega</h2>
+    </div>
 
-    <h2>🚚 Modos de Entrega</h2>
+    <div class="card shadow-sm">
 
-</div>
+        <div class="card-body">
 
+            <div class="table-responsive">
 
-<div class="card shadow-sm">
+                <table class="table table-hover align-middle">
 
-    <div class="card-body">
+                    <thead class="table-dark">
 
+                        <tr>
+                            <th>Modo</th>
+                            <th>Estado</th>
+                            <th class="text-center">Acción</th>
+                        </tr>
 
-        <table class="table table-hover">
+                    </thead>
 
-            <thead>
+                    <tbody>
 
-                <tr>
-                    <th>Modo</th>
-                    <th>Estado</th>
-                    <th>Acción</th>
-                </tr>
+                        @for(modo of modos; track modo.id){
 
-            </thead>
+                        <tr>
 
+                            <td>
+                                @if(modo.mode === 'delivery'){
+                                    🚚 Envío a domicilio
+                                }
+                                @else if(modo.mode === 'take_away'){
+                                    🛍️ Take Away
+                                }
+                                @else{
+                                    🍽️ Consumo en local
+                                }
+                            </td>
 
-            <tbody>
+                            <td>
+                                @if(modo.isActive){
+                                    <span class="badge bg-success">Activo</span>
+                                }
+                                @else{
+                                    <span class="badge bg-danger">Inactivo</span>
+                                }
+                            </td>
 
+                            <td class="text-center">
 
-                @for(modo of modos; track modo.id){
+                                <button
+                                    class="btn btn-sm w-100 w-md-auto"
+                                    [class.btn-danger]="modo.isActive"
+                                    [class.btn-success]="!modo.isActive"
+                                    (click)="cambiarEstado(modo)">
 
-                <tr>
+                                    @if(modo.isActive){
+                                        Desactivar
+                                    }
+                                    @else{
+                                        Activar
+                                    }
 
+                                </button>
 
-                    <td>
+                            </td>
 
-                        @if(modo.mode === 'delivery'){
-
-                            🚚 Envío a domicilio
+                        </tr>
 
                         }
-                        @else if(modo.mode === 'take_away'){
 
-                            🛍️ Take Away
+                    </tbody>
 
-                        }
-                        @else{
+                </table>
 
-                            🍽️ Consumo en local
+            </div>
 
-                        }
-
-                    </td>
-
-
-
-                    <td>
-
-                        @if(modo.isActive){
-
-                            <span class="badge bg-success">
-                                Activo
-                            </span>
-
-                        }
-                        @else{
-
-                            <span class="badge bg-danger">
-                                Inactivo
-                            </span>
-
-                        }
-
-                    </td>
-
-
-
-                    <td>
-
-
-                        <button 
-                        class="btn btn-sm"
-                        [class.btn-danger]="modo.isActive"
-                        [class.btn-success]="!modo.isActive"
-                        (click)="cambiarEstado(modo)">
-
-
-                            @if(modo.isActive){
-
-                                Desactivar
-
-                            }
-                            @else{
-
-                                Activar
-
-                            }
-
-
-                        </button>
-
-
-                    </td>
-
-
-                </tr>
-
-                }
-
-
-            </tbody>
-
-
-        </table>
-
+        </div>
 
     </div>
 
 </div>
-</div>
-

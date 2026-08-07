@@ -1,110 +1,111 @@
-<div class="dashboard">
+<div class="container-fluid">
+  <div class="row min-vh-100">
 
-    <aside class="sidebar">
+    <!-- Sidebar -->
+    <aside class="col-12 col-md-3 col-lg-2 bg-dark text-white p-3">
 
-        <h2>🍔Fast Track Food</h2>
+      <h4 class="text-center mb-4">🍔 Fast Track Food</h4>
 
-        <ul>
+      <ul class="nav flex-column">
 
-            <li>
-                <a routerLink="/admin/dashboard" routerLinkActive="active">
-                    📊 Dashboard
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" routerLink="/admin/dashboard" routerLinkActive="active">
+            📊 Dashboard
+          </a>
+        </li>
 
-                </a>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" routerLink="/admin/products" routerLinkActive="active">
+            📦 Productos
+          </a>
+        </li>
 
-            </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" routerLink="/admin/categorias" routerLinkActive="active">
+            📂 Categorías
+          </a>
+        </li>
 
-            <li>
-                <a routerLink="/admin/products" routerLinkActive="active">
-                    📦 Productos
-                </a>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" routerLink="/admin/pedidos" routerLinkActive="active">
+            🛒 Pedidos
+          </a>
+        </li>
 
-            </li>
-            <li>
-                <a routerLink="/admin/categorias" routerLinkActive="active">
-                    📂 Categorías
-                </a>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" routerLink="/admin/delivery-modes" routerLinkActive="active">
+            🏍️ Delivery
+          </a>
+        </li>
 
-            </li>
-            <li>
-                <a routerLink="/admin/pedidos" routerLinkActive="active">
-                    🛒 Pedidos
-                </a>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" routerLink="/admin/usuarios" routerLinkActive="active">
+            👥 Usuarios
+          </a>
+        </li>
 
-            </li>
+        <li class="nav-item">
+          <a class="nav-link text-danger">
+            🚪 Salir
+          </a>
+        </li>
 
-             <li>
-                <a routerLink="/admin/delivery-modes" routerLinkActive="active">
-                   🏍️ Delivery
-                </a>
-
-            </li>
-
-            <li>
-                <a routerLink="/admin/usuarios" routerLinkActive="active">
-                     👥Usuarios
-                </a>
-
-            </li>
-
-            <li>🚪 Salir</li>
-
-        </ul>
+      </ul>
 
     </aside>
 
-    <main class="content">
+    <!-- Contenido -->
+    <main class="col-12 col-md-9 col-lg-10 p-4">
 
-        <h2>
+      <h2 class="mb-4">
+        Bienvenido {{ usuario.name }}
+      </h2>
 
-            Bienvenido {{ usuario.name }}
+      <div class="row g-4">
 
-        </h2>
-
-        <div class="cards">
-
-            <div class="card">
-
-                <h3>📦 Productos</h3>
-
-                <p>Total registrados</p>
-
-                <h1>{{ totalProductos }}</h1>
-
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="card shadow text-center">
+            <div class="card-body">
+              <h5>📦 Productos</h5>
+              <p>Total registrados</p>
+              <h1>{{ totalProductos }}</h1>
             </div>
-
-            <div class="card">
-
-                <h3>📂 Categorías</h3>
-
-                <p>Total registrados</p>
-
-                <h1>{{ totalCategorias }}</h1>
-
-            </div>
-
-            <div class="card">
-
-                <h3>🛒 Pedidos</h3>
-
-                <p>Total registrados</p>
-
-                <h1>{{ totalPedidos }}</h1>
-
-            </div>
-
-            <div class="card">
-
-                <h3>👥 Usuarios</h3>
-
-                <p>Total registrados</p>
-
-                <h1>{{ totalUsuarios }}</h1>
-
-            </div>
-
+          </div>
         </div>
+
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="card shadow text-center">
+            <div class="card-body">
+              <h5>📂 Categorías</h5>
+              <p>Total registrados</p>
+              <h1>{{ totalCategorias }}</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="card shadow text-center">
+            <div class="card-body">
+              <h5>🛒 Pedidos</h5>
+              <p>Total registrados</p>
+              <h1>{{ totalPedidos }}</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="card shadow text-center">
+            <div class="card-body">
+              <h5>👥 Usuarios</h5>
+              <p>Total registrados</p>
+              <h1>{{ totalUsuarios }}</h1>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
     </main>
 
+  </div>
 </div>
