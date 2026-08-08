@@ -7,10 +7,10 @@ import { Injectable } from '@angular/core';
 export class Orders1 {
 
 
-  private apiUrl = 'http://localhost:3000/orders';
+  private apiUrl = 'https://nest-fast-track-food.onrender.com/orders';
 
 
-  private productsUrl = 'http://localhost:3000/products';
+  private productsUrl = 'https://nest-fast-track-food.onrender.com/products';
 
   getProducts() {
     return this.http.get(this.productsUrl, this.getHeaders());
@@ -47,7 +47,7 @@ export class Orders1 {
 
   getQrBase64(orderNumber: string) {
     return this.http.get(
-      `http://localhost:3000/orders/${orderNumber}/qr-base64`
+      `https://nest-fast-track-food.onrender.com/orders/${orderNumber}/qr-base64`
     )
   }
 

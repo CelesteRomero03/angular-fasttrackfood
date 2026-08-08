@@ -8,7 +8,7 @@ export class DeliveryModes {
 
 
 
-  private apiUrl = 'http://localhost:3000/delivery-mode';
+  private apiUrl = 'https://nest-fast-track-food.onrender.com/delivery-mode';
 
 
   constructor(private http: HttpClient) { }

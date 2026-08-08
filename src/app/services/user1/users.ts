@@ -8,7 +8,7 @@ export class Users1 {
 
 
 
-  api = 'http://localhost:3000/users';
+  api = 'https://nest-fast-track-food.onrender.com/users';
 
 
   constructor(private http: HttpClient) { }

@@ -8,7 +8,7 @@ export class Categories1 {
 
 
 
-  api = 'http://localhost:3000/categories';
+  api = 'https://nest-fast-track-food.onrender.com/categories';
 
 
 

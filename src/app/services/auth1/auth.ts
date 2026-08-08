@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class Auth1 {
 
 
-  api = 'http://localhost:3000/auth';
+  api = 'https://nest-fast-track-food.onrender.com/auth';
 
   constructor( private http:HttpClient){}
 

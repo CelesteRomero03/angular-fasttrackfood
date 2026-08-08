@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class Products1 {
 
-  private apiUrl = 'http://localhost:3000/products'
+  private apiUrl = 'https://nest-fast-track-food.onrender.com/products'
 
   constructor(private http: HttpClient) { }
 
