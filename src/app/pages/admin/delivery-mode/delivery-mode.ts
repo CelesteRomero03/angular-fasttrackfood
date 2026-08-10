@@ -15,7 +15,7 @@ export class DeliveryMode {
   constructor(private deliveryMode: DeliveryModes) { }
 
 
-  ngOnInit() {
+  ngOnInit():void {
     this.obtenerModos();
   }
 
@@ -28,7 +28,7 @@ export class DeliveryMode {
 
           console.log(resp);
 
-          this.modos = resp;
+          this.modos = resp.data;
 
         },
 
