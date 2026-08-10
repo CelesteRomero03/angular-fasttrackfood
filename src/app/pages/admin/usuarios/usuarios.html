@@ -1,5 +1,5 @@
 <div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
 
         <h2>👥 Gestión de Usuarios</h2>
 
@@ -9,80 +9,86 @@
 
 
     </div>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-                <th>Rol</th>
-                <th>Estado</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            @for(usuario of usuarios; track usuario.id) {
-            <tr>
-                <td>{{ usuario.name }}</td>
-                <td>{{ usuario.lastName }}</td>
-                <td>{{ usuario.email }}</td>
-                <td>{{ usuario.role }}</td>
-                <td>
-                    @if(usuario.isActive){
-                    <span class="badge bg-success">Activo</span>
-                    } @else {
-                    <span class="badge bg-danger">Inactivo</span>
-                    }
-                </td>
 
 
-                <td>
-                    <div class="d-flex flex-wrap gap-2">
-                       
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Rol</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
 
-                       
+            <tbody>
+                @for(usuario of usuarios; track usuario.id) {
+                <tr>
+                    <td>{{ usuario.name }}</td>
+                    <td>{{ usuario.lastName }}</td>
+                    <td>{{ usuario.email }}</td>
+                    <td>{{ usuario.role }}</td>
+                    <td>
+                        @if(usuario.isActive){
+                        <span class="badge bg-success">Activo</span>
+                        } @else {
+                        <span class="badge bg-danger">Inactivo</span>
+                        }
+                    </td>
 
 
-                        <button class="btn btn-sm" [class.btn-outline-danger]="usuario.isActive"
-                            [class.btn-outline-success]="!usuario.isActive" (click)="cambiarEstado(usuario)">
-
-                            @if(usuario.isActive){
-                            Desactivar
-                            } @else {
-                            Activar
-                            }
-
-                        </button>
-                         <button class="btn btn-sm btn-warning me-2" (click)="editarUsuario(usuario)"
-                            data-bs-toggle="modal" data-bs-target="#modalUsuario">
-
-                            <i class="bi bi-pencil"></i> Editar
-
-                        </button>
-
-                         <button class="btn btn-sm btn-danger me-2" (click)="eliminarUsuario(usuario.id)">
-
-                            <i class="bi bi-trash"></i>
-
-                        </button>
-
-                        <button class="btn btn-sm btn-secondary text-light me-2" (click)="reenviarEmail(usuario.id)">
-
-                           <i class="bi bi-envelope"></i>
-
-                        </button>
-
-                    </div>
+                    <td>
+                        <div class="d-flex flex-wrap gap-2">
 
 
 
 
-                </td>
-            </tr>
-            }
-        </tbody>
-    </table>
+
+                            <button class="btn btn-sm me-2 mb-1" [class.btn-outline-danger]="usuario.isActive"
+                                [class.btn-outline-success]="!usuario.isActive" (click)="cambiarEstado(usuario)">
+
+                                @if(usuario.isActive){
+                                Desactivar
+                                } @else {
+                                Activar
+                                }
+
+                            </button>
+                            <button class="btn btn-sm me-2 mb-1 btn-warning me-2" (click)="editarUsuario(usuario)"
+                                data-bs-toggle="modal" data-bs-target="#modalUsuario">
+
+                                <i class="bi bi-pencil"></i> Editar
+
+                            </button>
+
+                            <button class="btn btn-sm me-2 mb-1 btn-danger me-2" (click)="eliminarUsuario(usuario.id)">
+
+                                <i class="bi bi-trash"></i>
+
+                            </button>
+
+                            <button class="btn btn-sm me-2 mb-1 btn-secondary text-light me-2"
+                                (click)="reenviarEmail(usuario.id)">
+
+                                <i class="bi bi-envelope"></i>
+
+                            </button>
+
+                        </div>
+
+
+
+
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
 
 
 
@@ -93,7 +99,7 @@
     <!-- Modal Usuario -->
     <div class="modal fade" id="modalUsuario" tabindex="-1">
 
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 
             <div class="modal-content">
 

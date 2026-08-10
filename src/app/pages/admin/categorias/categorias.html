@@ -1,8 +1,8 @@
 <div class="container mt-4">
 
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
 
-        <h2>📦 Gestión de Categorias</h2>
+        <h2 class="mb-0">📦 Gestión de Categorias</h2>
 
         <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalCategoria">
 
@@ -12,94 +12,98 @@
 
     </div>
 
-    <table class="table table-striped table-hover">
 
-        <thead class="table-dark">
-            <tr>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Estado</th>
-                <th class="text-center">Acciones</th>
-            </tr>
-        </thead>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
 
-        <tbody>
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
 
-            @for (category of categorias; track category.id) {
+            <tbody>
 
-            <tr>
+                @for (category of categorias; track category.id) {
 
-                <td>{{ category.name }}</td>
+                <tr>
 
-                <td>{{ category.description }}</td>
+                    <td>{{ category.name }}</td>
 
-                <td>
+                    <td>{{ category.description }}</td>
 
-                    @if(category.isActive){
+                    <td>
 
-                    <span class="badge bg-success">
-                        Activa
-                    </span>
+                        @if(category.isActive){
 
-                    } @else {
+                        <span class="badge bg-success">
+                            Activa
+                        </span>
 
-                    <span class="badge bg-danger">
-                        Inactiva
-                    </span>
+                        } @else {
 
-                    }
+                        <span class="badge bg-danger">
+                            Inactiva
+                        </span>
 
-                </td>
+                        }
 
-                <td>
+                    </td>
 
-                    @if(category.isActive){
+                    <td class="text-center">
 
-                    <button class="btn btn-outline-danger btn-sm me-2" (click)="cambiarEstado(category)">
+                        @if(category.isActive){
 
-                        Desactivar
+                        <button class="btn btn-outline-danger btn-sm me-2 mb-1" (click)="cambiarEstado(category)">
 
-                    </button>
+                            Desactivar
 
-                    } @else {
+                        </button>
 
-                    <button class="btn btn-outline-success btn-sm me-2" (click)="cambiarEstado(category)">
+                        } @else {
 
-                        Activar
+                        <button class="btn btn-outline-success btn-sm me-2 mb-1" (click)="cambiarEstado(category)">
 
-                    </button>
+                            Activar
 
-                    }
+                        </button>
 
-                    <button class="btn btn-warning btn-sm me-2" (click)="editarCategoria(category)"
-                        data-bs-toggle="modal" data-bs-target="#modalCategoria">
+                        }
 
-                       <i class="bi bi-pencil"></i> Editar
+                        <button class="btn btn-warning btn-sm me-2 mb-1" (click)="editarCategoria(category)"
+                            data-bs-toggle="modal" data-bs-target="#modalCategoria">
 
-                    </button>
+                            <i class="bi bi-pencil"></i> Editar
 
-                    <button class="btn btn-danger btn-sm" (click)="seleccionarCatEliminar(category)"
-                        data-bs-toggle="modal" data-bs-target="#modalEliminar">
+                        </button>
 
-                         <i class="bi bi-trash"></i>
+                        <button class="btn btn-danger btn-sm me-2 mb-1" (click)="seleccionarCatEliminar(category)"
+                            data-bs-toggle="modal" data-bs-target="#modalEliminar">
 
-                    </button>
+                            <i class="bi bi-trash"></i>
 
-                </td>
+                        </button>
 
-            </tr>
+                    </td>
 
-            }
+                </tr>
 
-        </tbody>
+                }
 
-    </table>
+            </tbody>
+
+        </table>
+    </div>
+
 
 
     <!-- modal categoria formulario-->
     <div class="modal fade" id="modalCategoria" tabindex="-1">
 
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 
             <div class="modal-content">
 
@@ -122,7 +126,7 @@
 
                         <div class="mb-3">
 
-                            <label>Nombre</label>
+                            <label class="form-label">Nombre</label>
 
                             <input class="form-control" formControlName="name">
 
@@ -130,7 +134,7 @@
 
                         <div class="mb-3">
 
-                            <label>Descripción</label>
+                            <label class="form-label">Descripción</label>
 
                             <textarea class="form-control" rows="3" formControlName="description">
                              </textarea>
@@ -223,11 +227,5 @@
         </div>
 
     </div>
-
-
-
-
-
-
 
 </div>
