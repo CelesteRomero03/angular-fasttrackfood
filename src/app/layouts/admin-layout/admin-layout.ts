@@ -8,4 +8,19 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   templateUrl: './admin-layout.html',
   styleUrl: './admin-layout.css',
 })
-export class AdminLayout {}
+export class AdminLayout {
+
+
+menuAbierto = false;
+
+toggleMenu(): void {
+  this.menuAbierto = !this.menuAbierto;
+}
+
+cerrarMenu(): void {
+  this.menuAbierto = false;
+}
+
+
+
+}

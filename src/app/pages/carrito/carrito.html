@@ -1,54 +1,88 @@
-<div class="container mt-5">
 
-    <h2 class="cart-title">
-        🛒 Mi Carrito
-    </h2>
+<div class="container mt-4 mt-md-5 px-3 px-md-4">
 
-    @for(item of carrito; track item.id){
+  <h2 class="cart-title mb-4">
+    <i class="fa-solid fa-cart-shopping"></i>
+    Mi Carrito
+  </h2>
+
+
+  @for(item of carrito; track item.id) {
 
     <div class="cart-item">
 
-        <h4>{{ item.name }}</h4>
+      <!-- PRODUCTO -->
+      <div class="cart-product">
 
-        <div class="controls">
+        <h4 class="mb-2">
+          {{ item.name }}
+        </h4>
 
-            <button (click)="disminuir(item.id)">
-                -
-            </button>
-
-            <span>
-                {{ item.quantify }}
-            </span>
-
-            <button (click)="aumentar(item.id)">
-                +
-            </button>
-
-        </div>
-
-        <h5>
-            ${{ item.price * item.quantify }}
+        <h5 class="mb-0">
+          ${{ item.price * item.quantify }}
         </h5>
 
-        <button class="btn-eliminar" (click)="eliminar(item.id)">
-            🗑 Eliminar
+      </div>
+
+
+      <!-- CONTROLES -->
+      <div class="controls">
+
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          (click)="disminuir(item.id)">
+          -
         </button>
 
+        <span>
+          {{ item.quantify }}
+        </span>
+
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          (click)="aumentar(item.id)">
+          +
+        </button>
+
+      </div>
+
+
+      <!-- ELIMINAR -->
+      <button
+        type="button"
+        class="btn-eliminar"
+        (click)="eliminar(item.id)">
+
+        🗑 Eliminar
+
+      </button>
+
     </div>
 
-    }
+  }
 
-    <div class="cart-total">
-        <h3>
-            Total: ${{ total }}
-        </h3>
-    </div>
 
-    <button class="btn-checkout" routerLink="/checkout">
+  <!-- TOTAL -->
 
-        Continuar Compra
+  <div class="cart-total">
 
-    </button>
+    <h3 class="mb-0">
+      Total: ${{ total }}
+    </h3>
 
+  </div>
+
+
+  <!-- CHECKOUT -->
+
+  <button
+    class="btn-checkout"
+    routerLink="/checkout">
+
+    Continuar Compra
+
+  </button>
 
 </div>

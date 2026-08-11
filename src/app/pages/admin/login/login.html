@@ -1,58 +1,71 @@
-<div class="login-container">
 
-  <div class="login-card">
+<div class="login-container min-vh-100 d-flex align-items-center justify-content-center p-3">
 
-    <div class="text-center mb-4">
+  <div class="login-card card shadow w-100">
 
-      <h1>🍕Fast Track Food</h1>
+    <div class="card-body p-4 p-sm-5">
 
-      <p class="subtitle">
-        Panel de Administración
-      </p>
+      <div class="text-center mb-4">
+
+        <h1 class="h3 fw-bold mb-2">
+          🍕 Fast Track Food
+        </h1>
+
+        <p class="subtitle text-muted mb-0">
+          Panel de Administración
+        </p>
+
+      </div>
+
+
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="ingresar()">
+
+        <!-- EMAIL -->
+        <div class="mb-3">
+
+          <label class="form-label fw-semibold">
+            Email
+          </label>
+
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Ingrese email"
+            formControlName="email">
+
+        </div>
+
+
+        <!-- CONTRASEÑA -->
+        <div class="mb-4">
+
+          <label class="form-label fw-semibold">
+            Contraseña
+          </label>
+
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Ingrese contraseña"
+            formControlName="password">
+
+        </div>
+
+
+        <!-- BOTÓN -->
+        <button
+          class="btn btn-dark w-100 py-2"
+          type="submit">
+
+          🔐 Ingresar
+
+        </button>
+
+      </form>
 
     </div>
-
-    <form
-      [formGroup]="loginForm"
-      (ngSubmit)="ingresar()">
-
-      <div class="mb-3">
-
-        <label class="form-label">
-          Email
-        </label>
-
-        <input
-          type="email"
-          class="form-control"
-          placeholder="Ingrese email"
-          formControlName="email">
-
-      </div>
-
-      <div class="mb-4">
-
-        <label class="form-label">
-          Contraseña
-        </label>
-
-        <input
-          type="password"
-          class="form-control"
-          placeholder="Ingrese contraseña"
-          formControlName="password">
-
-      </div>
-
-      <button
-        class="btn-login"
-        type="submit">
-
-        🔐 Ingresar
-
-      </button>
-
-    </form>
 
   </div>
 

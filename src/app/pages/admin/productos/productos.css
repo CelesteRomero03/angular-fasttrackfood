@@ -2,7 +2,9 @@
 .content{
     background:#f8fafc;
 }
-
+.title{
+    color: black;
+}
 img{
 
     border-radius:10px;

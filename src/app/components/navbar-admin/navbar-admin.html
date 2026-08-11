@@ -1,36 +1,70 @@
-<nav class="navbar navbar-expand-lg admin-navbar">
+```html
+<nav class="navbar admin-navbar">
 
-  <div class="container">
+  <div class="container-fluid">
 
-    <a class="navbar-brand fw-bold" routerLink="/admin/dashboard">
-      Fast Track Admin
-    </a>
+    <!-- IZQUIERDA -->
+    <div class="header-left">
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#adminNavbar">
+      <button
+        class="btn-menu"
+        type="button"
+        (click)="menuToggle.emit()">
+        ☰
+      </button>
 
-      <span class="navbar-toggler-icon"></span>
+      <a
+        class="navbar-brand fw-bold"
+        routerLink="/admin/dashboard">
+        Fast Track Admin
+      </a>
 
-    </button>
+    </div>
 
-   
-      <div class="d-flex align-items-center">
 
-        <span class="text-light me-3">
-          👤 Administrador
-        </span>
+    <!-- DERECHA -->
+    <div class="header-right">
 
-        <button class="btn btn-outline-warning">
-          Cerrar sesión
+      <div class="user-menu">
+
+        <!-- USUARIO -->
+        <button
+          type="button"
+          class="user-button"
+          (click)="mostrarMenuUsuario = !mostrarMenuUsuario">
+
+          <i class="fa-regular fa-circle-user"></i> {{ usuario.name || 'Administrador' }}
+
+          <span class="flecha">
+            {{ mostrarMenuUsuario ? '▲' : '▼' }}
+          </span>
+
         </button>
+
+
+        <!-- OPCIÓN CERRAR SESIÓN -->
+        @if (mostrarMenuUsuario) {
+
+          <div class="user-dropdown">
+
+            <button
+              type="button"
+              class="logout-button"
+              (click)="cerrarSesion()">
+
+             <i class="fa-solid fa-right-from-bracket"></i> <span> Cerrar sesión</span>
+
+            </button>
+
+          </div>
+
+        }
 
       </div>
 
     </div>
 
-  
+  </div>
 
 </nav>
+```

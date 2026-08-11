@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { Products1 } from '../../../services/products1/products1';
 import { Categories1 } from '../../../services/category1/categories';
-import { Auth1 } from '../../../services/auth1/auth';
+
 import { Orders1 } from '../../../services/orders1/orders';
 import { Users1 } from '../../../services/user1/users';
-import { RouterLink, RouterLinkActive } from "@angular/router";
+
 
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterLinkActive, RouterLink],
+  imports: [],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })

@@ -1,47 +1,252 @@
-.admin-navbar{
 
-    background:#1b1b1b;
+/* ========================================
+   NAVBAR
+   ======================================== */
 
-    border-bottom:3px solid #d8b35c;
+.admin-navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 68px;
+
+  background: #1b1b1b;
+
+  border-bottom: 3px solid #d8b35c;
+
+  z-index: 3000;
+
+  padding: 0 15px;
+}
+
+
+.admin-navbar .container-fluid {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0;
+}
+
+
+/* ========================================
+   IZQUIERDA
+   ======================================== */
+
+.header-left {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.btn-menu {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #d8b35c;
+
+  font-size: 27px;
+
+  cursor: pointer;
+}
+
+.btn-menu:hover {
+  background: #333;
+}
+
+
+.admin-navbar .navbar-brand {
+  color: #d8b35c;
+
+  font-size: 23px;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   USUARIO
+   ======================================== */
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+
+.user-menu {
+  position: relative;
+}
+
+
+.user-button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  border: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  padding: 8px 10px;
+
+  border-radius: 8px;
+}
+
+.user-button:hover {
+  background: #333;
+}
+
+
+.flecha {
+  color: #d8b35c;
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   DROPDOWN
+   ======================================== */
+
+.user-dropdown {
+  position: absolute;
+
+  top: calc(100% + 8px);
+
+  right: 0;
+
+  min-width: 170px;
+
+  background: #1e293b;
+
+  border-radius: 8px;
+
+  padding: 6px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+
+  z-index: 4000;
+}
+
+
+.logout-button {
+  width: 100%;
+
+  border: none;
+
+  background: transparent;
+
+  color: #f87171;
+
+  text-align: left;
+
+  padding: 8px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background: #334155;
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 767px) {
+
+  .admin-navbar {
+    height: 68px;
+
+    padding: 0 8px;
+  }
+
+
+  .header-left {
+    gap: 5px;
+  }
+
+
+  .btn-menu {
+    width: 38px;
+    height: 38px;
+
+    font-size: 24px;
+  }
+
+
+  .admin-navbar .navbar-brand {
+    font-size: 17px;
+  }
+
+
+  .user-button {
+    font-size: 12px;
+
+    max-width: 130px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+  }
+
+
+  .user-dropdown {
+    right: 0;
+
+    min-width: 160px;
+  }
 
 }
 
-.admin-navbar .navbar-brand{
 
-    color:#d8b35c;
+/* ========================================
+   CELULAR PEQUEÑO
+   ======================================== */
 
-    font-size:24px;
+@media (max-width: 400px) {
 
-}
+  .admin-navbar .navbar-brand {
+    font-size: 15px;
+  }
 
-.admin-navbar .nav-link{
 
-    color:white;
+  .user-button {
+    max-width: 100px;
 
-    font-weight:500;
-
-    margin:0 8px;
-
-    transition:.3s;
-
-}
-
-.admin-navbar .nav-link:hover{
-
-    color:#d8b35c;
+    font-size: 11px;
+  }
 
 }
 
-.admin-navbar .nav-link.active{
-
-    color:#d8b35c;
-
-    border-bottom:2px solid #d8b35c;
-
-}
-
-.admin-navbar .btn-outline-warning{
-
-    border-radius:20px;
-
-}
