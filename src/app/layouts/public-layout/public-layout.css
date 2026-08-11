@@ -1,9 +1,30 @@
+
 .public-container {
+  width: 100%;
+  min-height: 100vh;
+
   background-image: url('/images/image5.avif');
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-   padding-top: 20px;
+
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  box-sizing: border-box;
 }
+
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+  .public-container {
+    background-attachment: scroll;
+
+    min-height: 100dvh;
+  }
+
+}
+
