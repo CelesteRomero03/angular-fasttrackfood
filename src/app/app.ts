@@ -3,10 +3,11 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { Navbar } from "./components/navbar/navbar";
 import { filter } from 'rxjs';
 import { NavbarAdmin } from './components/navbar-admin/navbar-admin';
+import { Spinner } from './shared/spinner/spinner';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,Spinner],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

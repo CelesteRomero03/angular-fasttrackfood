@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DeliveryModes } from '../../../services/delivery-mode/delivery-modes';
-import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-delivery-mode',
@@ -11,6 +11,8 @@ import { RouterLink } from '@angular/router';
 export class DeliveryMode {
 
   modos: any[] = [];
+
+  
 
   constructor(private deliveryMode: DeliveryModes) { }
 
@@ -28,7 +30,7 @@ export class DeliveryMode {
 
           console.log(resp);
 
-          this.modos = resp.data;
+          this.modos = resp;
 
         },
 
