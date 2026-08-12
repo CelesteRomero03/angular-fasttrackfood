@@ -39,7 +39,7 @@
   }
 
   .public-container:has(.welcome-container) {
-    min-height: calc(100dvh - 70px);
+     min-height: calc(100vh - 70px);
     padding-top: 0;
     padding-bottom: 0;
   }
