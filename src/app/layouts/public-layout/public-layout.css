@@ -28,15 +28,19 @@
 @media (max-width: 768px) {
 
   .public-container {
-    padding: 0;
-    min-height: 0;
-    background-attachment: scroll;
+    min-height: 100dvh;
+
+   
+
+    padding-top: 20px;
+    padding-bottom: 30px;
+
+    box-sizing: border-box;
   }
 
   .public-container:has(.welcome-container) {
-    min-height: 0;
-    padding: 0;
-
-    background-image: none;
+    min-height: calc(100dvh - 70px);
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
