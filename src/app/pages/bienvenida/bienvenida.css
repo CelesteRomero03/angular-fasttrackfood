@@ -1,97 +1,143 @@
-.welcome-container{
+.welcome-container {
+  width: 100%;
+  min-height: calc(100vh - 70px);
 
-    height:100vh;
+  background-image: url('/images/pizza9.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-    background-image:url('/images/pizza9.avif');
-
-    background-size:cover;
-
-    background-position:center;
-
+  display: flex;
 }
 
-.overlay{
+.overlay {
+  width: 100%;
+  min-height: calc(100vh - 70px);
 
-    background:rgba(0,0,0,.65);
+  background: rgba(0, 0, 0, 0.65);
 
-    width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    height:100%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
+  box-sizing: border-box;
 }
 
-.welcome-card{
+.welcome-card {
+  text-align: center;
+  color: white;
 
-    text-align:center;
+  width: 100%;
+  max-width: 700px;
 
-    color:white;
+  padding: 50px 40px;
 
-    max-width:600px;
-
-    padding:50px;
-
+  box-sizing: border-box;
 }
 
-.welcome-card h1{
+.welcome-card h1 {
+  font-size: clamp(40px, 6vw, 60px);
 
-    font-size:60px;
+  color: #ffc107;
 
-    color:#ffc107;
+  margin-bottom: 20px;
 
-    margin-bottom:20px;
-    font-family:fantasy
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+  letter-spacing: 2px;
+
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
 }
 
-.welcome-card h2{
+.welcome-card h2 {
+  font-size: clamp(28px, 4vw, 40px);
 
-    font-size:40px;
+  margin-bottom: 20px;
 
-    margin-bottom:20px;
-    font-family:Georgia, 'Times New Roman', Times, serif
+  font-family: Georgia, 'Times New Roman', Times, serif;
 
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-.welcome-card p{
+.welcome-card p {
+  font-size: clamp(16px, 2vw, 20px);
 
-    font-size:20px;
+  margin-bottom: 40px;
 
-    margin-bottom:40px;
+  color: #ddd;
 
-    color:#ddd;
-     font-family:Verdana, Geneva, Tahoma, sans-serif
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 
+  line-height: 1.6;
 }
 
-.btn-menu{
+.btn-menu {
+  background: #ffc107;
 
-    background:#ffc107;
+  color: #111;
 
-    color:black;
+  border: none;
 
-    border:none;
+  padding: 15px 45px;
 
-    padding:15px 45px;
+  border-radius: 30px;
 
-    border-radius:30px;
+  font-size: 20px;
 
-    font-size:20px;
+  font-weight: bold;
 
-    font-weight:bold;
+  cursor: pointer;
 
-    transition:.3s;
+  transition: all 0.3s ease;
 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-.btn-menu:hover{
+.btn-menu:hover {
+  background: #ffca2c;
 
-    background:#ffca2c;
+  transform: scale(1.05);
 
-    transform:scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+}
 
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+  .welcome-container {
+    min-height: calc(100dvh - 70px);
+
+    background-position: center;
+  }
+
+  .overlay {
+    min-height: calc(100dvh - 70px);
+
+    padding: 20px;
+  }
+
+  .welcome-card {
+    padding: 30px 15px;
+  }
+
+  .welcome-card h1 {
+    font-size: 40px;
+  }
+
+  .welcome-card h2 {
+    font-size: 28px;
+  }
+
+  .welcome-card p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .btn-menu {
+    width: 100%;
+    max-width: 300px;
+    padding: 13px 30px;
+    font-size: 18px;
+  }
 }
