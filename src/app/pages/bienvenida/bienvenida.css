@@ -8,6 +8,11 @@
   background-repeat: no-repeat;
 
   display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
 }
 
 .overlay {
@@ -102,42 +107,18 @@
 }
 
 /* CELULAR */
-
 @media (max-width: 768px) {
 
   .welcome-container {
-    min-height: calc(100dvh - 70px);
-
-    background-position: center;
-  }
-
-  .overlay {
-    min-height: calc(100dvh - 70px);
-
-    padding: 20px;
-  }
-
-  .welcome-card {
-    padding: 30px 15px;
-  }
-
-  .welcome-card h1 {
-    font-size: 40px;
-  }
-
-  .welcome-card h2 {
-    font-size: 28px;
-  }
-
-  .welcome-card p {
-    font-size: 16px;
-    margin-bottom: 30px;
-  }
-
-  .btn-menu {
     width: 100%;
-    max-width: 300px;
-    padding: 13px 30px;
-    font-size: 18px;
+    min-height: calc(100vh - 70px);
+
+    background-image: url('/images/pizza9.avif');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    margin: 0;
+    padding: 0;
   }
 }
