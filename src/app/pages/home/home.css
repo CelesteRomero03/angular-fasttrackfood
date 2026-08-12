@@ -188,3 +188,22 @@
   font-size: large;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.menu-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .menu-container {
+    padding-top: 1.5rem;
+  }
+  :host {
+  display: block;
+  width: 100%;
+  
+  background: transparent;
+}
+
+}
