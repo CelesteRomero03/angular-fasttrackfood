@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavbarAdmin } from '../../components/navbar-admin/navbar-admin';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-admin-layout',
@@ -12,6 +12,27 @@ export class AdminLayout {
 
 
 menuAbierto = false;
+
+constructor(private router:Router){
+    this.router.events.subscribe(() => {
+
+      // Eliminar cualquier backdrop de Bootstrap
+      document.querySelectorAll('.modal-backdrop').forEach(element => {
+        element.remove();
+      });
+
+      // Quitar estado de modal
+      document.body.classList.remove('modal-open');
+
+      // Restaurar scroll
+      document.body.style.removeProperty('padding-right');
+      document.body.style.removeProperty('overflow');
+
+    });
+
+}
+
+
 
 toggleMenu(): void {
   this.menuAbierto = !this.menuAbierto;
